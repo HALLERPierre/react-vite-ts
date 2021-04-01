@@ -123,7 +123,9 @@ const UserDetail: React.VFC<{ user: User }> = (props) => {
 };
 
 const Detail: React.VFC<{ detail: Detail }> = (props) => {
-  const displayValue = (value: any): any => {
+  const displayValue = (
+    value: null | Array<any> | object | string | number | boolean
+  ): string | React.ReactElement | React.ReactElement[] => {
     if (value === null) {
       return "null";
     }
